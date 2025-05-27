@@ -1,6 +1,6 @@
-import CameraPage from "@/pages/camera/ui";
-import HomePage from "@/pages/home/ui";
-import SettingsPage from "@/pages/settings/ui";
+import { CameraPage } from "@/pages/camera";
+import { HomePage } from "@/pages/home";
+import { SettingsPage } from "@/pages/settings";
 import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 

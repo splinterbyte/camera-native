@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Switch, Text } from "react-native";
+import { Options } from "@/widgets/options";
 import styled from "styled-components/native";
 
 const Container = styled.View`
@@ -7,22 +6,10 @@ const Container = styled.View`
   padding: 10px;
 `;
 
-const Thumb = styled.View`
-  flex-direction: row;
-  margin-bottom: 20px;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-export default function SettingsPage() {
-  const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
+export const SettingsPage = () => {
   return (
     <Container>
-      <Thumb>
-        <Text style={{ marginRight: 5 }}>Enable 1</Text>
-        <Switch onValueChange={toggleSwitch} value={isEnabled} />
-      </Thumb>
+      <Options />
     </Container>
   );
-}
+};

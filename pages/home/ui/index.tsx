@@ -1,6 +1,6 @@
 import { Text, View } from "react-native";
 
-export default function HomePage() {
+export const HomePage = () => {
   return (
     <View
       style={{
@@ -12,4 +12,4 @@ export default function HomePage() {
       <Text>Edit app/index.tsx to edit this screen.</Text>
     </View>
   );
-}
+};

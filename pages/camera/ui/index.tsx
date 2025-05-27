@@ -1,8 +1,9 @@
+import { Ionicons } from "@expo/vector-icons";
 import { CameraType, CameraView, useCameraPermissions } from "expo-camera";
 import { useState } from "react";
 import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-export default function App() {
+export const CameraPage = () => {
   const [facing, setFacing] = useState<CameraType>("back");
   const [permission, requestPermission] = useCameraPermissions();
 
@@ -31,14 +32,20 @@ export default function App() {
     <View style={styles.container}>
       <CameraView style={styles.camera} facing={facing}>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button} onPress={toggleCameraFacing}>
-            <Text style={styles.text}>Flip Camera</Text>
+          <TouchableOpacity>
+            <Ionicons name="radio-button-on" size={64} color={"white"} />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Ionicons name="radio-button-on" size={64} color={"white"} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={toggleCameraFacing}>
+            <Ionicons name="sync" size={64} color={"white"} />
           </TouchableOpacity>
         </View>
       </CameraView>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -56,12 +63,8 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     backgroundColor: "transparent",
-    margin: 64,
-  },
-  button: {
-    flex: 1,
-    alignSelf: "flex-end",
-    alignItems: "center",
+    alignItems: "flex-end",
+    justifyContent: "space-between",
   },
   text: {
     fontSize: 24,
